@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Baloo 2', cursive;
+            overflow: hidden;
+            position: relative;
+        }
+        /* Background bubbles animation */
+        .bubble {
+            position: absolute;
+            bottom: -150px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.05); /* Made bubbles more subtle */
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: rise 15s infinite ease-in; /* Slowed down animation */
+            z-index: -1;
+        }
+        .bubble:nth-child(1) { left: 10%; animation-duration: 12s; }
+        .bubble:nth-child(2) { left: 20%; animation-duration: 8s; animation-delay: 1s; }
+        .bubble:nth-child(3) { left: 35%; animation-duration: 15s; animation-delay: 2s; }
+        .bubble:nth-child(4) { left: 50%; animation-duration: 9s; animation-delay: 3s; }
+        .bubble:nth-child(5) { left: 55%; animation-duration: 10s; animation-delay: 1s; }
+        .bubble:nth-child(6) { left: 65%; animation-duration: 13s; }
+        .bubble:nth-child(7) { left: 75%; animation-duration: 11s; animation-delay: 2s; }
+        .bubble:nth-child(8) { left: 85%; animation-duration: 14s; animation-delay: 1s; }
+        .bubble:nth-child(9) { left: 90%; animation-duration: 9s; animation-delay: 3s; }
+        .bubble:nth-child(10) { left: 95%; animation-duration: 12s; }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-1080px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Nemo floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .nemo-container {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Construction tape pattern */
+        .construction-tape {
+            background: repeating-linear-gradient(
+                45deg,
+                #f59e0b, /* Darker amber color */
+                #f59e0b 25px,
+                #111827 25px, /* Darker gray/black */
+                #111827 50px
+            );
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-slate-800 to-slate-900 min-h-screen flex items-center justify-center p-4 text-slate-300">
+
+    <!-- Background bubbles -->
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <div class="w-full max-w-2xl mx-auto text-center">
+        
+        <!-- Construction Tape Top -->
+        <div class="construction-tape h-8 w-full mb-8 transform -rotate-3"></div>
+
+        <div class="bg-slate-700/30 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-slate-500/50">
+            <!-- Nemo SVG -->
+            <div class="nemo-container w-48 h-auto mx-auto mb-6">
+                <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Hard Hat -->
+                    <path d="M 75,20 a 40,25 0 0 1 80,0 v 10 h -80 z" fill="#fcd34d" stroke="#4a5568" stroke-width="2"/>
+                    <path d="M 65,30 h 100 v 5 h -100 z" fill="#fcd34d" stroke="#4a5568" stroke-width="2"/>
+                    
+                    <!-- Nemo's Body -->
+                    <path d="M 50,80 a 60,40 0 1 1 120,0 a 60,40 0 1 1 -120,0" fill="#f97316"/>
+                    
+                    <!-- Tail Fin -->
+                    <path d="M 20,80 Q 0,50 20,50 L 30,80 L 20,110 Q 0,110 20,80" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
+                    
+                    <!-- Top and Bottom Fins -->
+                    <path d="M 90,42 Q 110,30 130,45 L 110,48 z" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
+                    <path d="M 90,118 Q 110,130 130,115 L 110,112 z" fill="#f97316" stroke="#c2410c" stroke-width="2"/>
+                    
+                    <!-- Stripes -->
+                    <path d="M 80,45 Q 75,80 80,115 L 95,112 Q 90,80 95,48 z" fill="#ffffff"/>
+                    <path d="M 81,45 Q 76,80 81,115" fill="none" stroke="#000000" stroke-width="1.5"/>
+                    <path d="M 94,112 Q 89,80 94,48" fill="none" stroke="#000000" stroke-width="1.5"/>
+                    
+                    <path d="M 140,55 Q 135,80 140,105 L 150,103 Q 145,80 150,57 z" fill="#ffffff"/>
+                    <path d="M 141,55 Q 136,80 141,105" fill="none" stroke="#000000" stroke-width="1.5"/>
+                    <path d="M 149,103 Q 144,80 149,57" fill="none" stroke="#000000" stroke-width="1.5"/>
+                    
+                    <!-- Eye -->
+                    <circle cx="155" cy="70" r="10" fill="white"/>
+                    <circle cx="157" cy="72" r="5" fill="black"/>
+                    
+                    <!-- Mask -->
+                    <path d="M 155,85 Q 180,95 185,80 L 180,100 L 150,95 z" fill="#3b82f6" stroke="#1e40af" stroke-width="1.5" />
+                    <line x1="155" y1="85" x2="140" y2="60" stroke="#1e40af" stroke-width="1.5"/>
+                    <line x1="150" y1="95" x2="140" y2="105" stroke="#1e40af" stroke-width="1.5"/>
+
+                    <!-- Mouth Smile -->
+                    <path d="M 160,105 Q 165,110 170,105" stroke="#c2410c" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-bold text-amber-400 drop-shadow-lg">Something new is swimming this way!</h1>
+            <p class="mt-4 text-lg md:text-xl">Our little helper is working hard behind the scenes to build an amazing new website for you.</p>
+            <p class="mt-2 text-lg md:text-xl">Please swim by again soon!</p>
+        </div>
+
+        <!-- Construction Tape Bottom -->
+        <div class="construction-tape h-8 w-full mt-8 transform rotate-3"></div>
+
+    </div>
+
+</body>
+</html>
